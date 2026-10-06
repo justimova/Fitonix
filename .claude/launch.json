@@ -1,0 +1,11 @@
+{
+  "version": "0.0.1",
+  "configurations": [
+    {
+      "name": "client-app-static",
+      "runtimeExecutable": "sh",
+      "runtimeArgs": ["-c", "cd /private/tmp/claude-501/-Users-jay-Documents-GitHub-Fitonyashka/a9919f42-f920-4639-a5de-16476e02f990/scratchpad && exec node server.js"],
+      "port": 4200
+    }
+  ]
+}
