@@ -1,4 +1,4 @@
-import { Component, Input } from '@angular/core';
+import { Component, EventEmitter, Input, Output } from '@angular/core';
 import { ChartConfiguration } from 'chart.js';
 import { IWeight } from 'src/app/core/models/weight/weight';
 
@@ -11,6 +11,12 @@ import { IWeight } from 'src/app/core/models/weight/weight';
 export class WeightChartComponent {
   private _entries: IWeight[] = [];
 
+  @Input()
+  public isExpanded = false;
+
+  @Output()
+  public isExpandedChange = new EventEmitter<boolean>();
+
   public chartData: ChartConfiguration<'line'>['data'] = {
     labels: [],
     datasets: [
@@ -22,6 +28,7 @@ export class WeightChartComponent {
   };
 
   public chartOptions: ChartConfiguration<'line'>['options'] = {
+    maintainAspectRatio: false,
     plugins: {
       legend: {
         display: false
@@ -37,6 +44,11 @@ export class WeightChartComponent {
 
   public get entries(): IWeight[] {
     return this._entries;
+  }
+
+  public onToggleExpand(): void {
+    this.isExpanded = !this.isExpanded;
+    this.isExpandedChange.emit(this.isExpanded);
   }
 
   private updateChartData(): void {

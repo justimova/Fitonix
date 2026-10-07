@@ -119,6 +119,15 @@
   flex: 0.9;
 }
 
+.weight-content-expanded {
+  flex-direction: column;
+}
+
+.weight-content-expanded .weight-chart-section,
+.weight-content-expanded .weight-list-section {
+  flex: none;
+}
+
 .btn-add:hover {
   background: #4338ca;
 }

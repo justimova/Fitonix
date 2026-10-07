@@ -1,0 +1,40 @@
+:host {
+  display: block;
+}
+
+.weight-chart-actions {
+  display: flex;
+  justify-content: flex-end;
+}
+
+// The chart follows this box, so it keeps the 2:1 ratio at any width.
+.weight-chart-canvas {
+  position: relative;
+  aspect-ratio: 2;
+}
+
+// The canvas always fills its box, whatever size Chart.js last gave it.
+.weight-chart-canvas canvas {
+  position: absolute;
+  inset: 0;
+  width: 100% !important;
+  height: 100% !important;
+}
+
+.btn-expand {
+  display: flex;
+  border: none;
+  padding: 0.375rem;
+  border-radius: 0.6rem;
+  background: transparent;
+  transition: background 0.25s ease;
+}
+
+.btn-expand .material-icons {
+  font-size: 1rem;
+  color: #9ca3af;
+}
+
+.btn-expand:hover {
+  background-color: rgba(107, 114, 128, 0.1);
+}

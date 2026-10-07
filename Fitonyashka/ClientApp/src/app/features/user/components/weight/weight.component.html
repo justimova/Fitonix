@@ -20,9 +20,9 @@
       </div>
     </div>
   } @else if (weightHistory.length) {
-    <div class="weight-content">
+    <div class="weight-content" [class.weight-content-expanded]="isChartExpanded">
       <div class="weight-chart-section">
-        <app-weight-chart [entries]="weightHistory" />
+        <app-weight-chart [entries]="weightHistory" [(isExpanded)]="isChartExpanded" />
       </div>
       <div class="weight-list-section">
         <div class="weight-cards">

@@ -1,1 +1,13 @@
-<canvas baseChart [type]="'line'" [data]="chartData" [options]="chartOptions"> </canvas>
+<div class="weight-chart-actions">
+  <button
+    type="button"
+    class="btn btn-expand"
+    [attr.aria-label]="isExpanded ? 'Collapse chart' : 'Expand chart'"
+    (click)="onToggleExpand()"
+  >
+    <span class="material-icons">{{ isExpanded ? 'close_fullscreen' : 'open_in_full' }}</span>
+  </button>
+</div>
+<div class="weight-chart-canvas">
+  <canvas baseChart [type]="'line'" [data]="chartData" [options]="chartOptions"> </canvas>
+</div>

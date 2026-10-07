@@ -14,6 +14,7 @@ import { IWeight } from 'src/app/core/models/weight/weight';
 export class WeightComponent implements OnInit {
   protected weightHistory: IWeight[] = [];
   protected isLoading = false;
+  protected isChartExpanded = false;
   
   private destroyRef = inject(DestroyRef);
 
